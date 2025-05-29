@@ -156,7 +156,7 @@ llm fragments set instructions ./context/vip-cli-instructions.txt
 Add to `~/.bashrc` or `~/.zshrc`:
 
 ```bash
-alias vip-cli-ai='llm -f vip-cli  --system context/vip-cli-prompt.txt'
+alias vip-cli-ai='llm -f vip-cli  -f instructions'
 source ~/.zshrc  # or ~/.bashrc
 ```
 
@@ -195,6 +195,28 @@ vip-cli-ai --no-stream "How can I trigger a backup?" | glow
 ```
 
 **Note:** Glow provides syntax highlighting and proper markdown rendering in the terminal.
+
+### Interactive Chat Interface
+
+For interactive conversations with the VIP-CLI documentation, use the LLM chat interface:
+
+```bash
+# Start an interactive chat session
+llm chat -f vip-cli -f instructions
+
+# Example chat session
+> How do I use the backup command?
+[AI responds with backup command details]
+> Can you show me an example with the --site flag?
+[AI provides example with site flag]
+> exit  # or Ctrl+D to end the session
+```
+
+**Chat Interface Features:**
+- Maintains conversation context
+- Supports multi-turn interactions
+- Allows for follow-up questions
+- Preserves both VIP-CLI documentation and instructions context
 
 ---
 
