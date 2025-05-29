@@ -156,14 +156,14 @@ llm fragments set instructions ./context/vip-cli-instructions.txt
 Add to `~/.bashrc` or `~/.zshrc`:
 
 ```bash
-alias vip-cli-ai='llm -f vip-cli  -f instructions'
+alias vip-cli-ai='llm -f vip-cli  -f instructions '
 source ~/.zshrc  # or ~/.bashrc
 ```
 
 ### Windows (PowerShell):
 
 ```powershell
-Set-Alias vip-cli-ai "llm -f vip-cli -f instructions"
+Set-Alias vip-cli-ai "llm -f vip-cli -f instructions "
 ```
 
 ---
