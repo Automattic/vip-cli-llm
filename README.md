@@ -1,6 +1,12 @@
 # LLM CLI Setup for Querying VIP-CLI Documentation
 
-This guide helps you install and configure [LLM CLI](https://llm.datasette.io/en/stable/index.html), download the [VIP CLI](https://docs.wpvip.com/vip-cli/) documentation, and create a queryable local AI assistant using OpenAI.
+This guide helps you install and configure [LLM CLI](https://llm.datasette.io/en/stable/index.html), download the [VIP CLI](https://docs.wpvip.com/vip-cli/) documentation, and create a queryable local VIP-CLI AI assistant using OpenAI.
+
+
+
+https://github.com/user-attachments/assets/a4cec07e-56eb-487e-b93e-150f00c3349d
+
+
 
 ---
 
@@ -91,7 +97,7 @@ llm models default gpt-4.1
 Use `wget` to recursively download the VIP CLI documentation:
 
 ```bash
-wget --recursive --no-parent --wait=0.1 --convert-links --timestamping  https://docs.wpvip.com/vip-cli/
+wget --recursive --no-parent --accept html,htm --wait=0.1 --convert-links --timestamping  https://docs.wpvip.com/vip-cli/
 ```
 
 **Parameter Explanations:**
@@ -179,6 +185,9 @@ vip-cli-ai "What is the command to clear the object cache?"
 
 ### Formatting Output with Glow
 
+<img width="865" alt="Screenshot 2025-05-29 at 18 55 43" src="https://github.com/user-attachments/assets/285d8488-90c5-4903-919a-d3e2d7f7f839" />
+
+
 For better markdown formatting, pipe the output through Glow:
 
 ```bash
@@ -217,25 +226,6 @@ llm chat -f vip-cli -f instructions
 - Supports multi-turn interactions
 - Allows for follow-up questions
 - Preserves both VIP-CLI documentation and instructions context
-
----
-
-## 📝 Notes
-
-- To persist and share LLM context across sessions, use `llm embed` with the `--store` flag:
-    ```bash
-    llm embed --input context.txt --store --collection vip-cli-docs
-    ```
-
-- You can check which fragments are available:
-    ```bash
-    llm fragments list
-    ```
-
-- Delete old fragments if needed:
-    ```bash
-    llm fragments delete vip-cli
-    ```
 
 ---
 
