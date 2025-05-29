@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+	<meta http-equiv="content-type" content="text/html" charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+	<!-- This site is optimized with the Yoast SEO plugin v24.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>vip config software &#183; WordPress VIP Documentation</title>
+	<link rel="canonical" href="index.html" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="vip config software &#183; WordPress VIP Documentation" />
+	<meta property="og:description" content="Manage versions of software for an environment. Usage vip config software [options] [command] Options Option Description -d, --debug Generate verbose output during command execution to help identify or fix errors or bugs. -h, --help Retrieve a description, examples, and available options for a (sub)command. -v, --version Retrieve the version number of VIP-CLI currently installed on [&hellip;]" />
+	<meta property="og:url" content="https://docs.wpvip.com/vip-cli/commands/config/software/" />
+	<meta property="og:site_name" content="WordPress VIP Documentation" />
+	<meta property="og:image" content="https://docs.wpvip.com/wp-content/uploads/sites/2/2023/07/screenshot.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="900" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="1 minute" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://docs.wpvip.com/vip-cli/commands/config/software/","url":"https://docs.wpvip.com/vip-cli/commands/config/software/","name":"vip config software &#183; WordPress VIP Documentation","isPartOf":{"@id":"https://docs.wpvip.com/#website"},"datePublished":"2025-03-20T19:32:00+00:00","breadcrumb":{"@id":"https://docs.wpvip.com/vip-cli/commands/config/software/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://docs.wpvip.com/vip-cli/commands/config/software/"]}]},{"@type":"BreadcrumbList","@id":"https://docs.wpvip.com/vip-cli/commands/config/software/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"vip config","item":"https://docs.wpvip.com/vip-cli/commands/config/"},{"@type":"ListItem","position":2,"name":"vip config software"}]},{"@type":"WebSite","@id":"https://docs.wpvip.com/#website","url":"https://docs.wpvip.com/","name":"WordPress VIP Documentation","description":"WordPress VIP Documentation","publisher":{"@id":"https://docs.wpvip.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://docs.wpvip.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://docs.wpvip.com/#organization","name":"WordPress VIP","url":"https://docs.wpvip.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://docs.wpvip.com/#/schema/logo/image/","url":"https://docs.wpvip.com/wp-content/uploads/sites/2/2023/07/wp-vip-logo.png","contentUrl":"https://docs.wpvip.com/wp-content/uploads/sites/2/2023/07/wp-vip-logo.png","width":962,"height":900,"caption":"WordPress VIP"},"image":{"@id":"https://docs.wpvip.com/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='https://stats.wp.com/' />
+<link rel="alternate" type="application/rss+xml" title="WordPress VIP Documentation &raquo; Feed" href="https://docs.wpvip.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="WordPress VIP Documentation &raquo; Comments Feed" href="https://docs.wpvip.com/comments/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/docs.wpvip.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\ud83d\udd25","\ud83d\udc26\u200b\ud83d\udd25")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='all-css-2' href='https://docs.wpvip.com/wp-includes/css/dist/block-library/style.min.css?m=1746040294g' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='tab-group-tabs-style-inline-css'>
+.wp-block-tab-group-tabs{margin-bottom:1.41575em}.wp-block-tab-group-tabs ul.tab-labels{margin:0;padding:0}.wp-block-tab-group-tabs ul.tab-labels li{border-bottom-width:0;list-style:none;margin:0;padding:0}.wp-block-tab-group-tabs ul.tab-labels li label{background:#f9f5f5;border:solid #ddd;border-radius:10px 10px 0 0;border-width:1px 1px 0;color:#444;float:left;padding:15px 25px}.wp-block-tab-group-tabs ul.tab-labels li label:hover{background:#f2f2f2;cursor:pointer}.wp-block-tab-group-tabs ul.tab-labels li label:active{background:#fff}.wp-block-tab-group-tabs ul.tab-labels li:not(:last-child) label{border-right-width:0}.wp-block-tab-group-tabs ul.tab-labels li.active label{background:#fff;color:#111;position:relative}.wp-block-tab-group-tabs ul.tab-labels li.active label:hover{cursor:default}.wp-block-tab-group-tabs ul.tab-labels li.active label:after{background:#fff;bottom:-1px;content:"";display:block;height:2px;left:0;position:absolute;width:100%}.wp-block-tab-group-tabs section{background:#fff;border:1px solid #ddd;clear:both;padding:20px;width:100%}.wp-block-tab-group-tabs section div.tab-panel{display:none}.wp-block-tab-group-tabs section div.tab-panel.active{display:block}.wp-block-tab-group-tabs section div.tab-panel p:last-child{margin-bottom:0}@media only screen and (min-width:768px){.wp-block-tab-group-tabs.layout-left{display:flex;width:100%}.wp-block-tab-group-tabs.layout-left ul.tab-labels li{display:flex;flex-direction:column}.wp-block-tab-group-tabs.layout-left ul.tab-labels li label{border-bottom-width:1px;border-radius:10px 0 0 10px;border-right-width:0}.wp-block-tab-group-tabs.layout-left ul.tab-labels li:not(:last-child) label{border-bottom-width:0}.wp-block-tab-group-tabs.layout-left ul.tab-labels li.active label:after{height:100%;left:unset;right:-1px;top:0;width:2px}.wp-block-tab-group-tabs.layout-left .tab-content,.wp-block-tab-group-tabs.layout-left .tab-content .tab-panel.active{display:flex;flex:1;flex-direction:column}.wp-block-tab-group-tabs.layout-left .tab-content .tab-panel.active .wp-block-cgb-block-page-section{flex:1}.wp-block-tab-group-tabs.layout-left .tab-content .tab-panel.active>*{padding:0 2rem}}
+
+</style>
+<style id='wp-parsely-recommendations-style-inline-css'>
+.parsely-recommendations-list-title{font-size:1.2em}.parsely-recommendations-list{list-style:none;padding:unset}.parsely-recommendations-cardbody{overflow:hidden;padding:.8em;text-overflow:ellipsis;white-space:nowrap}.parsely-recommendations-cardmedia{padding:.8em .8em 0}
+
+</style>
+<link rel='stylesheet' id='all-css-8' href='https://docs.wpvip.com/_static/??-eJzTLy/QzcxLzilNSS3WzyrWz01NyUxMzUnNTc0rQeEU5CRWphbp5qSmJyZX6uVm5uklFxfr6OPTDpRD5sM02efaGpqbmBmYGBhZmgIARK0u4Q==' type='text/css' media='all' />
+<style id='jetpack-sharing-buttons-style-inline-css'>
+.jetpack-sharing-buttons__services-list{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;list-style-type:none;margin:5px;padding:0}.jetpack-sharing-buttons__services-list.has-small-icon-size{font-size:12px}.jetpack-sharing-buttons__services-list.has-normal-icon-size{font-size:16px}.jetpack-sharing-buttons__services-list.has-large-icon-size{font-size:24px}.jetpack-sharing-buttons__services-list.has-huge-icon-size{font-size:36px}@media print{.jetpack-sharing-buttons__services-list{display:none!important}}.editor-styles-wrapper .wp-block-jetpack-sharing-buttons{gap:0;padding-inline-start:0}ul.jetpack-sharing-buttons__services-list.has-background{padding:1.25em 2.375em}
+</style>
+<style id='elasticpress-facet-style-inline-css'>
+.widget_ep-facet input[type=search],.wp-block-elasticpress-facet input[type=search]{margin-bottom:1rem}.widget_ep-facet .searchable .inner,.wp-block-elasticpress-facet .searchable .inner{max-height:20em;overflow:scroll}.widget_ep-facet .term.hide,.wp-block-elasticpress-facet .term.hide{display:none}.widget_ep-facet .empty-term,.wp-block-elasticpress-facet .empty-term{opacity:.5;position:relative}.widget_ep-facet .empty-term:after,.wp-block-elasticpress-facet .empty-term:after{bottom:0;content:" ";display:block;left:0;position:absolute;right:0;top:0;width:100%;z-index:2}.widget_ep-facet .level-1,.wp-block-elasticpress-facet .level-1{padding-left:20px}.widget_ep-facet .level-2,.wp-block-elasticpress-facet .level-2{padding-left:40px}.widget_ep-facet .level-3,.wp-block-elasticpress-facet .level-3{padding-left:60px}.widget_ep-facet .level-4,.wp-block-elasticpress-facet .level-4{padding-left:5pc}.widget_ep-facet .level-5,.wp-block-elasticpress-facet .level-5{padding-left:75pt}.widget_ep-facet input[disabled],.wp-block-elasticpress-facet input[disabled]{cursor:pointer;opacity:1}.widget_ep-facet .term a,.wp-block-elasticpress-facet .term a{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;position:relative}.widget_ep-facet .term a:hover .ep-checkbox,.wp-block-elasticpress-facet .term a:hover .ep-checkbox{background-color:#ccc}.ep-checkbox{-webkit-box-align:center;-ms-flex-align:center;-ms-flex-negative:0;-webkit-box-pack:center;-ms-flex-pack:center;align-items:center;background-color:#eee;display:-webkit-box;display:-ms-flexbox;display:flex;flex-shrink:0;height:1em;justify-content:center;margin-right:.25em;width:1em}.ep-checkbox:after{border:solid #fff;border-width:0 .125em .125em 0;content:"";display:none;height:.5em;-webkit-transform:rotate(45deg);transform:rotate(45deg);width:.25em}.ep-checkbox.checked{background-color:#5e5e5e}.ep-checkbox.checked:after{display:block}
+
+</style>
+<link rel='stylesheet' id='all-css-12' href='https://docs.wpvip.com/_static/??-eJxVjl0KwkAMhC9kGirS9kU8yzYbNLp/bLIUb++iFOrTDMPwzeBWgHIyToaxQQntLklR2VV6IAenJlQqq6IXNaRuao+NPZSsprCGTC9QewfWIUoaeuWEHSuJQvOs+FSk7DlKrbke7F97P0FBusDhi1sIfKZ9ib1YxzhVNsW1SfD4XYfofrxbvI7zZTkv0zjNH9bKU5U=' type='text/css' media='all' />
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='privacy-toolset-css-css' href='https://docs.wpvip.com/wp-content/plugins/vip-privacy-toolset/assets/privacy-consent-banner.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='all-css-16' href='https://docs.wpvip.com/wp-content/themes/wpvip-docs/assets/build/main.css?m=1748286167g' type='text/css' media='all' />
+<script type="text/javascript" src="https://docs.wpvip.com/_static/??-eJzTLy/QzcxLzilNSS3WzwKiwtLUokoopZebmaeXVayjj0+Rbm5melFiSSpUsX2uraG5iZmBiYGRpWkWAK9jIh4=" ></script><link rel="https://api.w.org/" href="https://docs.wpvip.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://docs.wpvip.com/wp-json/wp/v2/vip-cli/23558" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://docs.wpvip.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.1" />
+<link rel='shortlink' href='https://docs.wpvip.com/?p=23558' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://docs.wpvip.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdocs.wpvip.com%2Fvip-cli%2Fcommands%2Fconfig%2Fsoftware%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://docs.wpvip.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdocs.wpvip.com%2Fvip-cli%2Fcommands%2Fconfig%2Fsoftware%2F&#038;format=xml" />
+	<style>img#wpstats{display:none}</style>
+		<script type="application/ld+json" class="wp-parsely-metadata">{"@context":"https:\/\/schema.org","@type":"NewsArticle","headline":"vip config software","url":"https:\/\/docs.wpvip.com\/vip-cli\/commands\/config\/software\/","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/docs.wpvip.com\/vip-cli\/commands\/config\/software\/"},"thumbnailUrl":"","image":{"@type":"ImageObject","url":""},"articleSection":"Uncategorized","author":[],"creator":[],"publisher":{"@type":"Organization","name":"WordPress VIP Documentation","logo":"https:\/\/docs.wpvip.com\/wp-content\/uploads\/sites\/2\/2023\/07\/cropped-cropped-site-logo.png"},"keywords":[],"dateCreated":"2025-03-20T19:32:00Z","datePublished":"2025-03-20T19:32:00Z","dateModified":"2025-03-20T19:32:00Z"}</script>	<script src="https://js-wc.site24x7static.com/site24x7/client/statusiq_status_widget/statusiq-status-widget.js" nomodule></script>
+	<script src="https://js-wc.site24x7static.com/site24x7/client/statusiq_status_widget/statusiq-status-widget.esm.js" type="module"></script>
+		<!-- Google Tag Manager -->
+	<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-575BNTT');</script>
+	<!-- End Google Tag Manager -->
+	<meta name='zd-site-verification' content='7cxj1zm4tc5yyfn3qmqdma' />
+<meta name='zd-site-verification' content='2mf9rufpf8n8v9bcs1a5r' />
+<meta name='zd-site-verification' content='8gyfxga8ta8241od5ke7hei' />
+<link rel="icon" href="https://docs.wpvip.com/wp-content/uploads/sites/2/2023/07/cropped-cropped-site-logo.png?w=32" sizes="32x32" />
+<link rel="icon" href="https://docs.wpvip.com/wp-content/uploads/sites/2/2023/07/cropped-cropped-site-logo.png?w=192" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://docs.wpvip.com/wp-content/uploads/sites/2/2023/07/cropped-cropped-site-logo.png?w=180" />
+<meta name="msapplication-TileImage" content="https://docs.wpvip.com/wp-content/uploads/sites/2/2023/07/cropped-cropped-site-logo.png?w=270" />
+		<style type="text/css" id="wp-custom-css">
+			.home ul.wp-block-post-template-is-layout-grid>li:before, .home ul.wp-block-post-template-is-layout-flow>li:before {content: "";}
+.home div.wp-block-group {padding:0 !important;}
+.home .wp-block-post-title {
+	margin-top: 5px;
+}
+.home .wp-block-query.recent li {
+	padding: 25px;
+}
+
+.home .wp-block-query.recent li .wp-block-group-is-layout-flex {
+	flex-direction: row;
+	align-items: baseline;
+}
+.home .wp-block-query.recent li .wp-block-group-is-layout-flex h3 {
+	width: 100%;
+}
+.home .wp-block-query.recent li .wp-block-group-is-layout-flex .wp-block-post-date {
+	font-size: 14px;
+	color: #737373;
+}
+.home .taxonomy-post_tag a {
+	display: inline-block;
+	padding: 0 5px;
+	border-radius: 5px;
+	text-decoration: none;
+	pointer-events: none;
+	cursor: default;
+	font-size: 12px;
+	text-transform: capitalize;
+}
+.home .taxonomy-post_tag a[href="https://docs.wpvip.com/tag/tech-ref/"], .home .taxonomy-post_tag a[href="https://docs.wpvip.com/tag/how-to/"]  {
+	display: none;
+}
+.home .taxonomy-post_tag a[href="https://docs.wpvip.com/tag/new/"]  {
+	background-color: #e3ffe0;
+	color: darkgreen;
+	border: 1px solid darkgreen;
+}
+.home .taxonomy-post_tag a[href="https://docs.wpvip.com/tag/updated/"]  {
+	background-color: lightyellow;
+	color: #cc7722;
+	border: 1px solid #cc7722;
+}
+.home .wp-block-post-terms__separator {
+	display: none;
+}		</style>
+		</head>
+
+<body class="wp-singular vip-cli-template-default single single-vip-cli postid-23558 wp-theme-a8c-docs wp-child-theme-wpvip-docs">
+
+<a class="screen-reader-text-focusable" href="index.html#site-content">
+	Skip to content</a>
+
+<div class="a8c-docs-layout">
+
+	<header class="a8c-docs-layout__header" role="banner">
+
+			<div class="a8c-docs-layout__header__announcement">
+		<p>Ready to get started with WordPress VIP? <a href="https://wpvip.com/contact/">Contact us</a></p>	</div>
+	
+		<div class="a8c-docs-layout__header__inner">
+
+			<a
+				class="a8c-docs-layout__header__brand"
+				href="https://docs.wpvip.com/"
+				aria-label="WordPress VIP Documentation"
+			>
+				<span class="a8c-docs-layout__header__brand__text">
+					Documentation				</span>
+			</a>
+			<!-- .a8c-docs-layout__header__brand -->
+
+			<div class="a8c-docs-layout__header__search">
+				<div class="a8c-docs-search-form-header__wrapper">
+
+	<form class="a8c-docs-search-form" action="https://docs.wpvip.com" method="get" role="search">
+
+		<label for="search" class="a8c-docs-search-form__label visually-hidden">Search</label>
+
+		<input aria-label="search" class="a8c-docs-search-input a8c-docs-input"
+			placeholder="Search the docs…" type="search" name="s"
+			autocomplete="off"
+			value="">
+
+		<button type="submit" class="a8c-docs-search-form__icon">Search</button>
+	</form>
+
+</div>
+			</div>
+			<!-- .a8c-docs-layout__header__search -->
+
+		</div>
+		<!-- .a8c-docs-layout__header__inner -->
+
+	</header>
+	<!-- .a8c-docs-layout__header -->
+
+	<div class="a8c-docs-layout__main" id="site-content">
+
+		<div class="a8c-docs-layout__main__inner">
+
+			
+<button
+	aria-controls="menu-navigation-nav-mobile"
+	aria-expanded="false"
+	id="A8C_DOCS_MENU_BUTTON"
+	class="a8c-docs-layout__toggle"
+	onclick="this.setAttribute( 'aria-expanded', 'true' !== this.getAttribute( 'aria-expanded' ) )"
+>
+	Menu</button>
+
+<nav aria-label="Main Menu" class="a8c-docs-layout__sidebar">
+
+	<div class="a8c-docs-search-form-sidebar__wrapper">
+
+	<form class="a8c-docs-search-form" action="https://docs.wpvip.com" method="get" role="search">
+
+		<label for="search" class="a8c-docs-search-form__label visually-hidden">Search</label>
+
+		<input aria-label="search" class="a8c-docs-search-input a8c-docs-input"
+			placeholder="Search the docs…" type="search" name="s"
+			autocomplete="off"
+			value="">
+
+		<button type="submit" class="a8c-docs-search-form__icon">Search</button>
+	</form>
+
+</div>
+<div class="a8c-docs-sidebar-list__header">
+					<a href="../../../index.html" class="a8c-docs-arrow-link a8c-docs-arrow-link--back">VIP-CLI</a>
+					<h3><a href="../../index.html">VIP-CLI command reference</a></h3>
+				</div><ul class="a8c-docs-sidebar-list"><li class="page_item page-item-23543 page_item_has_children"><a href="../../app/index.html">vip app</a>
+				<button aria-expanded="false" aria-label="Submenu for vip app" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23544 page_item_has_children"><a href="../../app/deploy/index.html">vip app deploy</a>
+				<button aria-expanded="false" aria-label="Submenu for vip app deploy" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23545"><a href="../../app/deploy/validate/index.html">vip app deploy validate</a></li></ul></li><li class="page_item page-item-23546"><a href="../../app/list/index.html">vip app list</a></li></ul></li><li class="page_item page-item-23547 page_item_has_children"><a href="../../backup/index.html">vip backup</a>
+				<button aria-expanded="false" aria-label="Submenu for vip backup" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23548"><a href="../../backup/db/index.html">vip backup db</a></li></ul></li><li class="page_item page-item-23549 page_item_has_children"><a href="../../cache/index.html">vip cache</a>
+				<button aria-expanded="false" aria-label="Submenu for vip cache" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23550"><a href="../../cache/purge-url/index.html">vip cache purge-url</a></li></ul></li><li class="page_item page-item-23551 page_item_has_children current_page_ancestor current_page_parent"><a href="../index.html">vip config</a>
+				<button aria-expanded="true" aria-label="Submenu for vip config" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23552 page_item_has_children"><a href="../envvar/index.html">vip config envvar</a>
+				<button aria-expanded="false" aria-label="Submenu for vip config envvar" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23553"><a href="../envvar/delete/index.html">vip config envvar delete</a></li><li class="page_item page-item-23554"><a href="../envvar/get/index.html">vip config envvar get</a></li><li class="page_item page-item-23555"><a href="../envvar/get-all/index.html">vip config envvar get-all</a></li><li class="page_item page-item-23556"><a href="../envvar/list/index.html">vip config envvar list</a></li><li class="page_item page-item-23557"><a href="../envvar/set/index.html">vip config envvar set</a></li></ul></li><li class="page_item page-item-23558 page_item_has_children current_page_item"><a href="index.html" aria-current="page">vip config software</a>
+				<button aria-expanded="true" aria-label="Submenu for vip config software" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23559"><a href="get/index.html">vip config software get</a></li><li class="page_item page-item-23560"><a href="update/index.html">vip config software update</a></li></ul></li></ul></li><li class="page_item page-item-23561 page_item_has_children"><a href="../../db/index.html">vip db</a>
+				<button aria-expanded="false" aria-label="Submenu for vip db" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23562"><a href="../../db/phpmyadmin/index.html">vip db phpmyadmin</a></li></ul></li><li class="page_item page-item-23563 page_item_has_children"><a href="../../dev-env/index.html">vip dev-env</a>
+				<button aria-expanded="false" aria-label="Submenu for vip dev-env" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23564"><a href="../../dev-env/create/index.html">vip dev-env create</a></li><li class="page_item page-item-23565"><a href="../../dev-env/destroy/index.html">vip dev-env destroy</a></li><li class="page_item page-item-23566"><a href="../../dev-env/exec/index.html">vip dev-env exec</a></li><li class="page_item page-item-23567 page_item_has_children"><a href="../../dev-env/import/index.html">vip dev-env import</a>
+				<button aria-expanded="false" aria-label="Submenu for vip dev-env import" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23568"><a href="../../dev-env/import/media/index.html">vip dev-env import media</a></li><li class="page_item page-item-23569"><a href="../../dev-env/import/sql/index.html">vip dev-env import sql</a></li></ul></li><li class="page_item page-item-23570"><a href="../../dev-env/info/index.html">vip dev-env info</a></li><li class="page_item page-item-23571"><a href="../../dev-env/list/index.html">vip dev-env list</a></li><li class="page_item page-item-23572"><a href="../../dev-env/logs/index.html">vip dev-env logs</a></li><li class="page_item page-item-23573"><a href="../../dev-env/purge/index.html">vip dev-env purge</a></li><li class="page_item page-item-23574"><a href="../../dev-env/shell/index.html">vip dev-env shell</a></li><li class="page_item page-item-23575"><a href="../../dev-env/start/index.html">vip dev-env start</a></li><li class="page_item page-item-23576"><a href="../../dev-env/stop/index.html">vip dev-env stop</a></li><li class="page_item page-item-23577 page_item_has_children"><a href="../../dev-env/sync/index.html">vip dev-env sync</a>
+				<button aria-expanded="false" aria-label="Submenu for vip dev-env sync" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23578"><a href="../../dev-env/sync/sql/index.html">vip dev-env sync sql</a></li></ul></li><li class="page_item page-item-23579"><a href="../../dev-env/update/index.html">vip dev-env update</a></li></ul></li><li class="page_item page-item-23580 page_item_has_children"><a href="../../export/index.html">vip export</a>
+				<button aria-expanded="false" aria-label="Submenu for vip export" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23581"><a href="../../export/sql/index.html">vip export sql</a></li></ul></li><li class="page_item page-item-23582 page_item_has_children"><a href="../../import/index.html">vip import</a>
+				<button aria-expanded="false" aria-label="Submenu for vip import" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23583 page_item_has_children"><a href="../../import/media/index.html">vip import media</a>
+				<button aria-expanded="false" aria-label="Submenu for vip import media" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23584"><a href="../../import/media/abort/index.html">vip import media abort</a></li><li class="page_item page-item-23585"><a href="../../import/media/status/index.html">vip import media status</a></li></ul></li><li class="page_item page-item-23586 page_item_has_children"><a href="../../import/sql/index.html">vip import sql</a>
+				<button aria-expanded="false" aria-label="Submenu for vip import sql" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23587"><a href="../../import/sql/status/index.html">vip import sql status</a></li></ul></li><li class="page_item page-item-23588"><a href="../../import/validate-files/index.html">vip import validate-files</a></li><li class="page_item page-item-23589"><a href="../../import/validate-sql/index.html">vip import validate-sql</a></li></ul></li><li class="page_item page-item-23590"><a href="../../logout/index.html">vip logout</a></li><li class="page_item page-item-23591"><a href="../../logs/index.html">vip logs</a></li><li class="page_item page-item-23592"><a href="../../search-replace/index.html">vip search-replace</a></li><li class="page_item page-item-23593"><a href="../../slowlogs/index.html">vip slowlogs</a></li><li class="page_item page-item-23594"><a href="../../sync/index.html">vip sync</a></li><li class="page_item page-item-23595 page_item_has_children"><a href="../../validate/index.html">vip validate</a>
+				<button aria-expanded="false" aria-label="Submenu for vip validate" class="a8c-docs-sidebar-list__toggle"></button><ul class='children'><li class="page_item page-item-23596"><a href="../../validate/preflight/index.html">vip validate preflight</a></li></ul></li><li class="page_item page-item-23597"><a href="../../whoami/index.html">vip whoami</a></li><li class="page_item page-item-23598"><a href="../../wp/index.html">vip wp</a></li></ul><ul class="a8c-docs-sidebar-footer is-style-muted"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10908"><a href="https://wordpressvip.zendesk.com/">Contact Support</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11027"><a href="https://wpvipstatus.com/">WordPress VIP Status</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10905"><a href="https://lobby.vip.wordpress.com/">VIP Lobby</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10906"><a href="https://wpvip.com/resources/">Resource Library</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10907"><a href="https://docs.parse.ly/">Parse.ly Help</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19760"><a href="https://wpvip.com/privacy/">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15890"><a href="https://wpvip.com/accessibility/">Accessibility at WordPress VIP</a></li>
+</ul>
+</nav>
+<!-- .a8c-docs-layout__sidebar -->
+
+			<div class="a8c-docs-layout__main__content" id="a8c-docs-toc-scroll">
+
+								<div id="a8c-docs-toc-content" class="a8c-docs-layout__main__content__inner">
+
+	<div class="a8c-docs-layout__main__content__primary">
+
+		<main>
+
+			<nav class="a8c-docs-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../../index.html">VIP-CLI command reference</a></li> <li><a href="../index.html">vip config</a></li> <li aria-current="page">vip config software</li></ol></nav>
+			
+<article
+	class="a8c-docs-entry post-23558 vip-cli type-vip-cli status-publish hentry vip-cli-version-3-12-2"	aria-label="vip config software"
+	id="post-23558"
+>
+
+	<header class="a8c-docs-entry__header">
+
+		
+<h1 class="a8c-docs-entry__title">
+	vip config software</h1>
+
+		
+	</header>
+	<!-- .a8c-docs-entry__header -->
+
+	<div class="a8c-docs-entry__content">
+
+		 <p>Manage versions of software for an environment.</p>   <h2 class="wp-block-heading">Usage</h2>   <pre class="wp-block-preformatted">vip config software [options] [command]</pre>   <h2 class="wp-block-heading">Options</h2>   <figure class="wp-block-table"><table><thead><tr><th>Option</th><th>Description</th></tr></thead><tbody><tr>
+						<td><code>-d</code>, <code>--debug</code></td>
+						<td>Generate verbose output during command execution to help identify or fix errors or bugs.</td>
+					</tr><tr>
+						<td><code>-h</code>, <code>--help</code></td>
+						<td>Retrieve a description, examples, and available options for a (sub)command.</td>
+					</tr><tr>
+						<td><code>-v</code>, <code>--version</code></td>
+						<td>Retrieve the version number of VIP-CLI currently installed on the local machine.</td>
+					</tr></tbody></table></figure>  <h2 class="wp-block-heading">Examples</h2>   <pre class="wp-block-preformatted">- Retrieve a list of the current versions of all environment software in the default table format.<br />$ vip @example-app.develop config software get<br /><br />- Retrieve the current version of WordPress for a WordPress environment and a list of available versions in the default table format.<br />$ vip @example-app.develop config software get wordpress --include=available_versions<br /><br />- Update the version of WordPress on a WordPress environment to 6.4.x.<br />$ vip @example-app.develop config software update wordpress 6.4<br /><br />- Update the version of Node.js on a Node.js environment to 18.x.<br />$ vip @example-node-app.develop config software update nodejs 18</pre>   <h2 class="wp-block-heading">Subcommands</h2>   <figure class="wp-block-table"><table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody><tr>
+						<td><a href="https://docs.wpvip.com/vip-cli/commands/config/software/get"><code>get</code></a></td>
+						<td>Retrieve the current versions of environment software.</td>
+					</tr><tr>
+						<td><a href="https://docs.wpvip.com/vip-cli/commands/config/software/update"><code>update</code></a></td>
+						<td>Update the version of software running on an environment.</td>
+					</tr></tbody></table></figure> 
+	</div>
+	<!-- .a8c-docs-entry-content -->
+
+	
+	<p class='a8c-docs-last-updated-text'>Last updated: March 20, 2025</p>
+</article>
+<!-- .a8c-docs-entry -->
+
+			
+		</main>
+
+		
+		
+<footer class="a8c-docs-layout__main__content__footer">
+
+	<hr />
+
+		<h2 class="has-text-align-center screen-reader-text">
+		Contact WordPress VIP	</h2>
+
+	<p class="has-text-align-center a8c-docs-layout__main__content__footer__header">
+		Have a question, or ready to get started with WordPress VIP?	</p>
+
+	<div class="a8c-docs-button-group__wrapper">
+		<ul class="a8c-docs-button-group">
+			<li>
+				<a class="a8c-docs-button" target="_blank"
+					href="https://wordpressvip.zendesk.com/">Contact Support</a>
+			</li>
+
+			<li>
+				<a class="a8c-docs-button is-style-secondary" target="_blank"
+					href="https://wpvip.com/contact/">Contact Sales</a>
+			</li>
+		</ul>
+	</div>
+
+	<p class="has-text-align-center">
+		<statusiq-status-widget src="https://wpvipstatus.com" widget-type="badge" widget-text="WPVIP"></statusiq-status-widget>
+	</p>
+
+	<hr />
+	
+	<p class="has-text-align-center a8c-docs-gutter-bottom-none font-small">
+		Documentation is licensed under a	</p>
+
+	<p class="has-text-align-center font-small">
+		<a href="https://creativecommons.org/licenses/by-sa/4.0/">
+			Creative Commons Attribution-ShareAlike 4.0 International License		</a>
+	</p>
+
+	<div class="a8c-docs-automattic-block">
+
+		<p>
+			<a href="https://automattic.com/">
+				An <span class="screen-reader-text">Automattic</span><svg class="svg-icon svg-icon-automattic" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 15.4"><path d="M72.5 15.4c-5.1 0-8.4-3.7-8.4-7.5v-.4c0-3.9 3.3-7.5 8.4-7.5 5.1 0 8.4 3.6 8.4 7.5V8c0 3.8-3.3 7.4-8.4 7.4zm5.7-7.9c0-2.8-2-5.3-5.7-5.3s-5.7 2.5-5.7 5.3v.3c0 2.8 2 5.3 5.7 5.3s5.7-2.5 5.7-5.3v-.3z" fill="#3298CB"/><path d="M15 14.9l-1.9-3.6H4.7l-1.8 3.6H0L7.8.5H10l7.9 14.4H15zM8.8 3.3l-3.1 6h6.4l-3.3-6zm21.4 12.1c-5.2 0-7.6-2.8-7.6-6.5V.5h2.7V9c0 2.7 1.7 4.2 5.1 4.2 3.4 0 4.8-1.6 4.8-4.2V.5h2.7v8.4c0 3.6-2.3 6.5-7.7 6.5zM52.9 2.8v12.1h-2.7V2.8h-6.3V.5h15.3v2.2h-6.3zM105 14.9V3.5l-.7 1.3-6 10.1H97L91 4.8l-.7-1.3v11.4h-2.6V.5h3.7l5.7 9.9.7 1.2.7-1.2 5.6-9.9h3.7v14.4H105zm23.1 0l-1.9-3.6h-8.4l-1.8 3.6h-3L120.8.5h2.2l7.9 14.4h-2.8zm-6.2-11.6l-3.1 6h6.4l-3.3-6zm19.9-.5v12.1h-2.7V2.8h-6.3V.5h15.3v2.2h-6.3zm19.8 0v12.1h-2.7V2.8h-6.3V.5h15.3v2.2h-6.3zm12.9 12.1v-13c1.1 0 1.5-.6 1.5-1.4h1.1v14.4h-2.6zm23.8-10.3c-1.3-1.2-3.2-2.3-5.8-2.3-3.8 0-6 2.6-6 5.4V8c0 2.7 2.2 5.3 6.2 5.3 2.4 0 4.4-1.1 5.6-2.3l1.6 1.7c-1.6 1.6-4.3 2.9-7.4 2.9-5.4 0-8.7-3.5-8.7-7.4v-.6c0-3.9 3.6-7.6 8.9-7.6 3 0 5.8 1.3 7.3 2.9l-1.7 1.7zM74.3 5c.5.3.6 1 .3 1.5l-2.5 3.8c-.3.5-1 .6-1.5.3s-.6-1-.3-1.5l2.5-3.8c.4-.5 1-.6 1.5-.3z"/></svg> Creation			</a>
+		</p>
+
+	</div>
+	<!-- .a8c-docs-automattic-block -->
+
+</footer>
+<!-- .a8c-docs-layout__main__content__footer -->
+
+	</div>
+	<!-- .a8c-docs-layout__main__content__primary -->
+
+	<div class="a8c-docs-layout__main__content__secondary">
+
+		
+		<nav id="docs-toc-nav" class="a8c-docs-table-of-contents__sticky" aria-label="Table of Contents">
+					</nav>
+
+	</div>
+	<!-- .a8c-docs-layout__main__content__secondary -->
+
+				</div>
+				<!-- .a8c-docs-layout__main__content__inner -->
+
+			</div>
+			<!-- .a8c-docs-layout__main__content -->
+
+		</div>
+		<!-- .a8c-docs-layout__main__inner -->
+
+	</div>
+	<!-- .a8c-docs-layout__main -->
+
+</div>
+<!-- .a8c-docs-layout -->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/sites\/2\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/wpvip-docs\/*","\/wp-content\/themes\/a8c-docs\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<!-- A8C RUM -->
+	<script defer id="bilmur" data-provider="vip" data-service="k8s-a8c"
+			src="https://s0.wp.com/wp-content/js/bilmur.min.js?m=202522"></script>
+	<div id="privacy-consent-banner" style="display: none;">
+	<div class="cookie-banner">
+		<div class="cookie-banner__simple-options">
+			<p class="cookie-banner__simple-text-description">
+				As an open source company, we take your privacy seriously and want to be as transparent as possible.
+					So: We use cookies to collect some personal data from you (like your browsing data, IP addresses,
+					and other unique identifiers). Some of these cookies we absolutely need in order to make things
+					work, and others you can choose in order to optimize your experience while using our site and
+					services.			</p>
+			<div class="cookie-banner__button-container">
+				<button class="cookie-banner__customize-button">Customize</button>
+				<button class="cookie-banner__accept-all-button">Accept all</button>
+			</div>
+		</div>
+		<div class="cookie-banner__options-selection" style="display: none;">
+			<p class="cookie-banner__options-lead-text">
+				As an open source company, we take your privacy seriously and want to be as transparent as possible.
+					So: We use cookies to collect some personal data from you (like your browsing data, IP addresses,
+					and other unique identifiers). Some of these cookies we absolutely need in order to make things
+					work, and others you can choose in order to optimize your experience while using our site and
+					services.			</p>
+			<div class="cookie-banner__bucket-container">
+				<input class="cookie-banner__checkbox" type="checkbox" checked disabled>
+				<div class="cookie-banner__option-description">
+					<strong>Required</strong>
+					<p>These cookies are essential for our websites and services to perform basic functions and are
+						necessary for us to operate certain features, like allowing registered users to authenticate and
+						perform account-related functions, storing preferences set by users (like account name,
+						language, and location), and ensuring our services operate properly.					</p>
+				</div>
+			</div>
+			<div class="cookie-banner__bucket-container">
+				<input id="analytics-bucket-toggle" class="cookie-banner__checkbox" type="checkbox" checked>
+				<div class="cookie-banner__option-description">
+					<strong>Analytics</strong>
+					<p>These cookies allow us to optimize performance by collecting information on how users interact
+						with our websites.</p>
+				</div>
+			</div>
+			<div class="cookie-banner__bucket-container">
+				<input id="advertising-bucket-toggle" class="cookie-banner__checkbox" type="checkbox" checked>
+				<div class="cookie-banner__option-description">
+					<strong>Advertising</strong>
+					<p>We and our advertising partners set these cookies to provide you with relevant content and to understand that content’s effectiveness.</p>
+				</div>
+			</div>
+			<button class="cookie-banner__accept-selection-button">Accept selection</button>
+		</div>
+	</div>
+</div><script type="text/javascript" src="https://docs.wpvip.com/wp-content/plugins/vip-privacy-toolset/assets/privacy-consent-banner.js?ver=1.0.0" id="privacy-toolset-js-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://docs.wpvip.com/wp-content/themes/a8c-docs/assets/build/main.js?m=1748286167g" ></script><script type="text/javascript" id="jetpack-stats-js-before">
+/* <![CDATA[ */
+_stq = window._stq || [];
+_stq.push([ "view", JSON.parse("{\"v\":\"ext\",\"blog\":\"182304402\",\"post\":\"23558\",\"tz\":\"0\",\"srv\":\"docs.wpvip.com\",\"hp\":\"vip\",\"j\":\"1:14.6\"}") ]);
+_stq.push([ "clickTrackerInit", "182304402", "23558" ]);
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://stats.wp.com/e-202522.js" id="jetpack-stats-js" defer="defer" data-wp-strategy="defer"></script>
+
+</body>
+
+</html>
