@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP-CLI AI Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
+    <style>
+        .chat-container {
+            height: calc(100vh - 200px);
+        }
+        .message {
+            max-width: 80%;
+            margin: 10px;
+            padding: 10px 15px;
+            border-radius: 15px;
+        }
+        .user-message {
+            background-color: #e3f2fd;
+            margin-left: auto;
+        }
+        .assistant-message {
+            background-color: #f5f5f5;
+            margin-right: auto;
+        }
+        /* Code block styling */
+        .assistant-message pre {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 0.5rem 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .assistant-message code {
+            background-color: #ccc;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        .assistant-message pre code {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
+        /* Markdown content styling */
+        .assistant-message p {
+            margin: 0.5rem 0;
+        }
+        .assistant-message ul, .assistant-message ol {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+        .assistant-message h1, .assistant-message h2, .assistant-message h3 {
+            margin: 1rem 0 0.5rem 0;
+            font-weight: bold;
+        }
+        .assistant-message h1 { font-size: 1.5rem; }
+        .assistant-message h2 { font-size: 1.25rem; }
+        .assistant-message h3 { font-size: 1.1rem; }
+        .assistant-message blockquote {
+            border-left: 4px solid #e0e0e0;
+            margin: 0.5rem 0;
+            padding-left: 1rem;
+            color: #666;
+        }
+        .assistant-message table {
+            border-collapse: collapse;
+            margin: 0.5rem 0;
+            width: 100%;
+        }
+        .assistant-message th, .assistant-message td {
+            border: 1px solid #e0e0e0;
+            padding: 0.5rem;
+            text-align: left;
+        }
+        .assistant-message th {
+            background-color: #f5f5f5;
+        }
+        
+        .typing-indicator {
+            display: none;
+            padding: 10px;
+        }
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            background-color: #666;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            animation: typing 1s infinite;
+        }
+        @keyframes typing {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-4">
+        <h1 class="text-3xl font-bold text-center mb-8">VIP-CLI AI Assistant</h1>
+        
+        <div class="bg-white rounded-lg shadow-lg p-4">
+            <div id="chat-messages" class="chat-container overflow-y-auto mb-4">
+                <div class="assistant-message message">
+                    Hello! I'm your VIP-CLI assistant. How can I help you today?
+                </div>
+            </div>
+            
+            <div id="typing-indicator" class="typing-indicator">
+                <span></span>
+                <span style="animation-delay: 0.2s"></span>
+                <span style="animation-delay: 0.4s"></span>
+            </div>
+            
+            <form id="chat-form" class="flex gap-2">
+                <input type="text" id="user-input" 
+                       class="flex-1 p-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                       placeholder="Type your message here...">
+                <button type="submit" 
+                        class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">
+                    Send
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const chatForm = document.getElementById('chat-form');
+        const userInput = document.getElementById('user-input');
+        const chatMessages = document.getElementById('chat-messages');
+        const typingIndicator = document.getElementById('typing-indicator');
+
+        function addMessage(message, isUser = false, isHtml = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'assistant-message'}`;
+            
+            if (isHtml) {
+                messageDiv.innerHTML = message;
+            } else {
+                messageDiv.textContent = message;
+            }
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return messageDiv;
+        }
+
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const message = userInput.value.trim();
+            if (!message) return;
+
+            // Add user message
+            addMessage(message, true);
+            userInput.value = '';
+
+            // Show typing indicator
+            typingIndicator.style.display = 'block';
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message }),
+                });
+
+                const data = await response.json();
+                
+                // Hide typing indicator
+                typingIndicator.style.display = 'none';
+
+                if (data.status === 'success') {
+                    addMessage(data.response, false, data.is_html);
+                } else {
+                    addMessage('Sorry, there was an error processing your request.');
+                }
+            } catch (error) {
+                typingIndicator.style.display = 'none';
+                addMessage('Sorry, there was an error connecting to the server.');
+            }
+        });
+    </script>
+</body>
+</html> 
