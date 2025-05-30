@@ -2,6 +2,8 @@
 
 A web-based chat interface for the VIP-CLI AI Assistant using Flask and the LLM library.
 
+<img width="1573" alt="Screenshot 2025-05-30 at 18 12 29" src="https://github.com/user-attachments/assets/ffa062d3-9428-4850-8134-99322794e0bb" />
+
 ## Features
 
 - Modern, responsive chat interface
