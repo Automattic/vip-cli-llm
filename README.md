@@ -227,6 +227,10 @@ llm chat -f vip-cli -f instructions
 - Allows for follow-up questions
 - Preserves both VIP-CLI documentation and instructions context
 
+### Web Chat Interface
+
+Please follow this [README_WEB](https://github.com/Automattic/vip-cli-llm/blob/trunk/README_WEB.md)  to get more details on setting up a browser based chat interface.
+
 ---
 
 ## 📚 Resources
