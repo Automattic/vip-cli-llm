@@ -2,10 +2,7 @@
 
 This guide helps you install and configure [LLM CLI](https://llm.datasette.io/en/stable/index.html), download the [VIP CLI](https://docs.wpvip.com/vip-cli/) documentation, and create a queryable local VIP-CLI AI assistant using OpenAI.
 
-
-
-https://github.com/user-attachments/assets/a4cec07e-56eb-487e-b93e-150f00c3349d
-
+![video](https://github.com/user-attachments/assets/339541e2-5f3e-4f33-975b-540c30913d20)
 
 
 ---
