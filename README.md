@@ -11,7 +11,7 @@ This guide helps you install and configure [LLM CLI](https://llm.datasette.io/en
 
 ### macOS
 
-1. Install LLM CLI:
+1. Install [LLM CLI](https://github.com/simonw/llm):
     ```bash
     brew install llm
     ```
